@@ -1,5 +1,6 @@
 package net.pneumono.riptideshieldfix.mixin;
 
+import org.spongepowered.asm.mixin.Mixin;
 //? if >=26.3 {
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -7,7 +8,6 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.client.renderer.FirstPersonHandsAndItemsRenderer;
 import net.minecraft.world.InteractionHand;
-import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.objectweb.asm.Opcodes;
@@ -30,5 +30,7 @@ public abstract class FirstPersonHandsAndItemsRendererMixin {
         return original.call(state) && state.useItemHand == hand;
     }
 }
-//?} else
-/*public abstract class FirstPersonHandsAndItemsRendererMixin {}*/
+//?} else {
+/*@Mixin()
+public abstract class FirstPersonHandsAndItemsRendererMixin {}*/
+//?}
