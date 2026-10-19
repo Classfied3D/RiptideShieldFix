@@ -1,6 +1,7 @@
 package net.pneumono.riptideshieldfix.mixin;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+//? if <26.3 {
+/*import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.player.AbstractClientPlayer;
@@ -15,8 +16,8 @@ public abstract class ItemInHandRendererMixin {
             //? if >=26.2 {
             method = "submitArmWithItem",
             //?} else {
-            /*method = "renderArmWithItem",
-            *///?}
+            /^method = "renderArmWithItem",
+            ^///?}
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/player/AbstractClientPlayer;isAutoSpinAttack()Z"
@@ -29,4 +30,7 @@ public abstract class ItemInHandRendererMixin {
     ) {
         return original.call(player) && player.getUsedItemHand() == hand;
     }
-}
+}*/
+//?} else {
+public abstract class ItemInHandRendererMixin {}
+//?}
